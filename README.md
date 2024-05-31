@@ -1,0 +1,2 @@
+# smartPocket
+Financial manager app
