@@ -7,11 +7,11 @@ public class Account {
         return balance;
     }
 
-    public void addExpense(String description, int value) {
-        this.balance -= value;
+    public void withdraw(int amount) {
+        this.balance -= amount;
     }
 
-    public void addIncome(String description, int value) {
-        this.balance += value;
+    public void deposit(int amount) {
+        this.balance += amount;
     }
 }

@@ -11,35 +11,34 @@ class AccountTest {
         assertEquals(0 , account.totalBalance());
     }
     @Test
-    void addExpenseSoBalanceIsMinusOne(){
+    void withdrawAmountSoBalanceIsMinusOne(){
         Account account = new Account();
 
-        account.addExpense("iFood", 1);
+        account.withdraw(1);
         assertEquals(-1, account.totalBalance());
     }
     @Test
-    void addIncomeSoBalanceIsOne(){
+    void depositAmountSoBalanceIsOne(){
         Account account = new Account();
 
-        account.addIncome("Salary", 1);
+        account.deposit(1);
         assertEquals(1, account.totalBalance());
     }
     @Test
-    void addTwoExpensesSoBalanceIsMinusTwo(){
+    void withDrawSoBalanceIsMinusTwo(){
         Account account = new Account();
 
-        account.addExpense("iFood", 1);
-        account.addExpense("iFood", 1);
+        account.withdraw(1);
+        account.withdraw(1);
 
         assertEquals(-2, account.totalBalance());
     }
-
     @Test
-    void addTwoIncomesSoBalanceIsTwo(){
+    void depositSoBalanceIsTwo(){
         Account account = new Account();
 
-        account.addIncome("Salary", 1);
-        account.addIncome("Salary", 1);
+        account.deposit(1);
+        account.deposit(1);
 
         assertEquals(2, account.totalBalance());
     }
