@@ -9,7 +9,7 @@ public class ExpenseTest {
     @Test
     void newExpenseHasDescriptionAndValue(){
 
-        Expense expense = new Expense("Test", 0);
+        Expense expense = new Expense("Test", 0, 1);
 
         assertEquals("""
                       Description: Test

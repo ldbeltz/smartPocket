@@ -14,4 +14,8 @@ public class Income {
                Value: %s
                """.formatted(description, value);
     }
+
+    public int getValue() {
+        return value;
+    }
 }
