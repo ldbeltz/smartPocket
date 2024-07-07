@@ -9,21 +9,24 @@ class PocketAccountTest {
     @Test
     void newAccountHasBalanceOfZero(){
         PocketAccount pocketAccount = new PocketAccount();
-        assertEquals(0 , pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(0);
     }
     @Test
     void withdrawAmountSoBalanceIsMinusOne(){
         PocketAccount pocketAccount = new PocketAccount();
 
         pocketAccount.withdraw(1);
-        assertEquals(-1, pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(-1);
     }
     @Test
     void depositAmountSoBalanceIsOne(){
         PocketAccount pocketAccount = new PocketAccount();
 
         pocketAccount.deposit(1);
-        assertEquals(1, pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(1);
     }
     @Test
     void withDrawSoBalanceIsMinusTwo(){
@@ -32,7 +35,8 @@ class PocketAccountTest {
         pocketAccount.withdraw(1);
         pocketAccount.withdraw(1);
 
-        assertEquals(-2, pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(-2);
     }
     @Test
     void depositSoBalanceIsTwo(){
@@ -40,8 +44,8 @@ class PocketAccountTest {
 
         pocketAccount.deposit(1);
         pocketAccount.deposit(1);
-
-        assertEquals(2, pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(2);
     }
     @Test
     void insertExpenseSoBalanceShouldBeDiscounted(){
@@ -50,7 +54,8 @@ class PocketAccountTest {
 
         pocketAccount.insert(expense);
 
-        assertEquals(-3, pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(-3);
     }
     @Test
     void insertIncomeSoBalanceShouldBeAdded(){
@@ -58,8 +63,8 @@ class PocketAccountTest {
         Income income = new Income("Test", 3);
 
         pocketAccount.insert(income);
-
-        assertEquals(3, pocketAccount.totalBalance());
+        assertThat(pocketAccount.totalBalance())
+                .isEqualTo(3);
     }
 
     @Test
@@ -104,4 +109,5 @@ class PocketAccountTest {
         assertThat(pocketAccount.totalDebt())
                 .isEqualTo(160);
     }
+
 }
